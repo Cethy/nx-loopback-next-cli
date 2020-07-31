@@ -54,7 +54,7 @@ module.exports = class ModelGenerator extends ArtifactGenerator {
   _setupGenerator() {
     this.artifactInfo = {
       type: 'model',
-      rootDir: /*'apps/gateway/' + */utils.sourceRootDir,
+      rootDir: utils.sourceRootDir,
     };
     
     this.artifactInfo.outDir = path.resolve(
