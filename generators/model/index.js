@@ -52,9 +52,14 @@ module.exports = class ModelGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator()
+    
     this.artifactInfo = {
       type: 'model',
-      rootDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
     
     this.artifactInfo.outDir = path.resolve(
@@ -120,7 +125,7 @@ module.exports = class ModelGenerator extends ArtifactGenerator {
       ),
     });
 
-    return super._setupGenerator();
+    return;
   }
 
   setOptions() {

@@ -28,7 +28,10 @@ module.exports = class ObserverGenerator extends ArtifactGenerator {
 
     this.artifactInfo = {
       type: 'observer',
-      rootDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     this.artifactInfo.outDir = path.resolve(

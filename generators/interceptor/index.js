@@ -35,7 +35,10 @@ module.exports = class InterceptorGenerator extends ArtifactGenerator {
 
     this.artifactInfo = {
       type: 'interceptor',
-      rootDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     this.artifactInfo.outDir = path.resolve(

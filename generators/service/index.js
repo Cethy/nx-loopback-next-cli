@@ -42,7 +42,10 @@ module.exports = class ServiceGenerator extends ArtifactGenerator {
   _setupGenerator() {
     this.artifactInfo = {
       type: 'service',
-      rootDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     this.artifactInfo.outDir = path.resolve(

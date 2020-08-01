@@ -147,7 +147,10 @@ module.exports = class RepositoryGenerator extends ArtifactGenerator {
   _setupGenerator() {
     this.artifactInfo = {
       type: 'repository ',
-      rootDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     this.artifactInfo.outDir = path.resolve(

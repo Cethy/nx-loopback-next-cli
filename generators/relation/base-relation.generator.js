@@ -19,7 +19,10 @@ module.exports = class BaseRelationGenerator extends ArtifactGenerator {
   _setupGenerator() {
     this.artifactInfo = {
       type: 'relation',
-      rootDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     this.artifactInfo.outDir = path.resolve(

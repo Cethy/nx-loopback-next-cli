@@ -109,8 +109,14 @@ module.exports = class RelationGenerator extends ArtifactGenerator {
     });
     this.artifactInfo = {
       type: 'relation',
-      rootDir: utils.sourceRootDir,
-      outDir: utils.sourceRootDir,
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      ),
+      outDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
     // to check if model and repo exist
     this.artifactInfo.modelDir = path.resolve(
