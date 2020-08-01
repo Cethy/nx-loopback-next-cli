@@ -40,6 +40,8 @@ module.exports = class ServiceGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator();
+
     this.artifactInfo = {
       type: 'service',
       rootDir: path.resolve(
@@ -69,8 +71,6 @@ module.exports = class ServiceGenerator extends ArtifactGenerator {
       required: false,
       description: g.f('A valid datasource name'),
     });
-
-    return super._setupGenerator();
   }
 
   setOptions() {

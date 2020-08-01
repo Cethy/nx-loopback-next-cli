@@ -21,6 +21,8 @@ module.exports = class InterceptorGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator();
+
     this.option('global', {
       description: g.f('Flag to indicate a global interceptor'),
       required: false,
@@ -47,8 +49,6 @@ module.exports = class InterceptorGenerator extends ArtifactGenerator {
     );
 
     this.artifactInfo.defaultTemplate = SCRIPT_TEMPLATE;
-
-    return super._setupGenerator();
   }
 
   setOptions() {

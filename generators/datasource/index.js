@@ -27,9 +27,14 @@ module.exports = class DataSourceGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator();
+    
     this.artifactInfo = {
       type: 'datasource',
-      rootDir: 'src',
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     // Datasources are stored in the datasources directory
@@ -58,8 +63,6 @@ module.exports = class DataSourceGenerator extends ArtifactGenerator {
     // Though it can be added by creating a PR and adding it to
     // connectors.json
     this.connectorChoices.push('other');
-
-    return super._setupGenerator();
   }
 
   setOptions() {

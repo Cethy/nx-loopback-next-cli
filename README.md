@@ -22,30 +22,30 @@ for a detailed documentation.
 1. Generate a loopback app w/ [nx-loopback-next](https://www.npmjs.com/package/nx-loopback-next) ;
 2. Update your `workspace.json` file :
 
-```json
-{
-  "projects": {
-    "{{YOUR_PROJECT}}": {
-      // ...
-      "architect": {
-        // ...
-        "model": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "command": "nx-lb4 model --appDir={{YOUR_PROJECT}}"
+    ```json
+    {
+      "projects": {
+        "{{YOUR_PROJECT}}": {
+          // ...
+          "architect": {
+            // ...
+            "model": {
+              "builder": "@nrwl/workspace:run-commands",
+              "options": {
+                "command": "nx-lb4 model --appDir={{YOUR_PROJECT}}"
+              }
+            }
           }
         }
       }
     }
-  }
-}
-```
+    ```
 
 3. Use the new command :
 
-```sh
-nx model gateway
-```
+    ```sh
+    nx model gateway
+    ```
 
 ## Changes from official repo
 
@@ -55,6 +55,8 @@ nx model gateway
 ### "Fixed" commands
 
 - [x] model
+- [x] datasource
+- [x] controller
 - [x] interceptor
 - [x] observer
 - [ ] openapi

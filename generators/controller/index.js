@@ -30,9 +30,14 @@ module.exports = class ControllerGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator();
+
     this.artifactInfo = {
       type: 'controller',
-      rootDir: 'src',
+      rootDir: path.resolve(
+        this.options.appDir,
+        utils.sourceRootDir,
+      )
     };
 
     // XXX(kjdelisle): These should be more extensible to allow custom paths
@@ -56,8 +61,6 @@ module.exports = class ControllerGenerator extends ArtifactGenerator {
       required: false,
       description: g.f('Type for the %s', this.artifactInfo.type),
     });
-
-    return super._setupGenerator();
   }
 
   setOptions() {
@@ -250,7 +253,7 @@ module.exports = class ControllerGenerator extends ArtifactGenerator {
       default:
         break;
     }
-    const source = this.templatePath(path.join('src', 'controllers', template));
+    const source = this.templatePath(path.join(this.options.appDir, utils.sourceRootDir, 'controllers', template));
     if (debug.enabled) {
       debug(`Using template at: ${source}`);
     }

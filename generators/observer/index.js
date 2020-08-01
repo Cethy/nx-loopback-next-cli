@@ -20,6 +20,8 @@ module.exports = class ObserverGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator();
+
     this.option('group', {
       description: g.f('Name of the observer group for ordering'),
       required: false,
@@ -40,8 +42,6 @@ module.exports = class ObserverGenerator extends ArtifactGenerator {
     );
 
     this.artifactInfo.defaultTemplate = SCRIPT_TEMPLATE;
-
-    return super._setupGenerator();
   }
 
   setOptions() {

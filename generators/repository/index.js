@@ -145,6 +145,8 @@ module.exports = class RepositoryGenerator extends ArtifactGenerator {
   }
 
   _setupGenerator() {
+    super._setupGenerator();
+
     this.artifactInfo = {
       type: 'repository ',
       rootDir: path.resolve(
@@ -195,8 +197,6 @@ module.exports = class RepositoryGenerator extends ArtifactGenerator {
       description: g.f('A valid repository base class'),
       default: 'DefaultCrudRepository',
     });
-
-    return super._setupGenerator();
   }
 
   setOptions() {
