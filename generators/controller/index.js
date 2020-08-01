@@ -253,7 +253,7 @@ module.exports = class ControllerGenerator extends ArtifactGenerator {
       default:
         break;
     }
-    const source = this.templatePath(path.join(this.options.appDir, utils.sourceRootDir, 'controllers', template));
+    const source = this.templatePath(path.join('src', 'controllers', template));
     if (debug.enabled) {
       debug(`Using template at: ${source}`);
     }
