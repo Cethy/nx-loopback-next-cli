@@ -12,7 +12,7 @@ yarn add nx-loopback-next-cli
 
 ## Basic Use
 
-Run `nx-lb4 --commands` or `nx-lb4 -l` to list all available commands:
+Run `yarn nx-lb4 --commands` or `yarn nx-lb4 -l` to list all available commands:
 
 See [CLI reference](https://loopback.io/doc/en/lb4/Command-line-interface.html)
 for a detailed documentation.
@@ -33,6 +33,24 @@ for a detailed documentation.
               "builder": "@nrwl/workspace:run-commands",
               "options": {
                 "command": "nx-lb4 model --appDir={{YOUR_PROJECT}}"
+              }
+            },
+            "datasource": {
+              "builder": "@nrwl/workspace:run-commands",
+              "options": {
+                "command": "nx-lb4 datasource --appDir={{YOUR_PROJECT}}"
+              }
+            },
+            "repository": {
+              "builder": "@nrwl/workspace:run-commands",
+              "options": {
+                "command": "nx-lb4 repository --appDir={{YOUR_PROJECT}}"
+              }
+            },
+            "controller": {
+              "builder": "@nrwl/workspace:run-commands",
+              "options": {
+                "command": "nx-lb4 controller --appDir={{YOUR_PROJECT}}"
               }
             }
           }
